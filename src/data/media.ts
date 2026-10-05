@@ -14,23 +14,38 @@ export interface MediaSlot {
 
 export const slots = {
   hero: {
+    src: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=1200&q=80',
+    srcSet:
+      'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=1200&q=80 1200w',
     alt: 'Mulher adulta em ambiente sereno de clínica de estética, sob luz natural suave',
     sizes: '(min-width: 1024px) 40vw, 90vw',
   },
   philosophyMain: {
-    alt: 'Detalhe editorial de uma sala de atendimento com luz natural',
+    src: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80',
+    srcSet:
+      'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80 1200w',
+    alt: 'Sala de atendimento com luz natural e ambiente sereno',
     sizes: '(min-width: 1024px) 45vw, 90vw',
   },
   philosophyDetail: {
-    alt: 'Detalhe de textura e materiais da clínica',
+    src: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80',
+    srcSet:
+      'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80 600w',
+    alt: 'Detalhe de produto de skincare e cuidados com a pele',
     sizes: '(min-width: 1024px) 20vw, 40vw',
   },
   signature: {
-    alt: 'Cena de protocolo em andamento em sala de atendimento reservada',
+    src: 'https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=1600&q=80',
+    srcSet:
+      'https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=1000&q=80 1000w, https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=1600&q=80 1600w',
+    alt: 'Protocolo estético em andamento em sala de atendimento reservada',
     sizes: '100vw',
   },
   about: {
-    alt: 'Profissional da Aura Estética em sua sala de atendimento',
+    src: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80',
+    srcSet:
+      'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80 1200w',
+    alt: 'Profissional de estética em sua sala de atendimento',
     sizes: '(min-width: 1024px) 45vw, 90vw',
   },
 } satisfies Record<string, MediaSlot>;
