@@ -13,6 +13,7 @@ export interface MediaSlot {
 }
 
 export const slots = {
+  // Mulher recebendo tratamento facial em clínica de estética — spa/beleza
   hero: {
     src: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80',
     srcSet:
@@ -20,13 +21,15 @@ export const slots = {
     alt: 'Mulher adulta em ambiente sereno de clínica de estética, sob luz natural suave',
     sizes: '(min-width: 1024px) 40vw, 90vw',
   },
+  // Ambiente de spa com mesa de atendimento, luz suave e atmosfera relaxante
   philosophyMain: {
-    src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80',
+    src: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80',
     srcSet:
-      'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80 1200w',
-    alt: 'Sala de atendimento com luz natural e ambiente sereno de clínica',
+      'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80 1200w',
+    alt: 'Sala de atendimento de clínica de estética com luz natural e ambiente sereno',
     sizes: '(min-width: 1024px) 45vw, 90vw',
   },
+  // Detalhe de produto de skincare — soro/creme em fundo clean
   philosophyDetail: {
     src: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80',
     srcSet:
@@ -34,13 +37,15 @@ export const slots = {
     alt: 'Detalhe de produto de skincare e cuidados com a pele',
     sizes: '(min-width: 1024px) 20vw, 40vw',
   },
+  // Med spa: tratamento estético facial em andamento — ambiente clínico elegante
   signature: {
-    src: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=1600&q=80',
+    src: 'https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=1600&q=80',
     srcSet:
-      'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=1000&q=80 1000w, https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=1600&q=80 1600w',
-    alt: 'Protocolo estético facial em andamento em sala de atendimento reservada',
+      'https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=1000&q=80 1000w, https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=1600&q=80 1600w',
+    alt: 'Protocolo estético em andamento em sala de atendimento reservada',
     sizes: '100vw',
   },
+  // Skincare/rotina de beleza — luz suave, ambientação de bem-estar
   about: {
     src: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80',
     srcSet:
