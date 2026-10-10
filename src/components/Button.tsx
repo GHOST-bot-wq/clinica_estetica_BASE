@@ -53,7 +53,7 @@ export default function Button({
         onClick={onClick}
         {...linkProps}
         className={cn(
-          'link-underline inline-flex items-center gap-2 text-[13px] font-medium tracking-[0.06em]',
+          "link-underline relative inline-flex items-center gap-2 text-[13px] font-medium tracking-[0.06em] after:absolute after:-inset-x-2 after:-inset-y-3 after:content-['']",
           className,
         )}
       >

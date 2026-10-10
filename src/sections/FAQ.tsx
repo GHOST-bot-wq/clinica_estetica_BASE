@@ -26,7 +26,7 @@ export default function FAQ() {
       <div className="container-x grid gap-16 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-4">
           <div className="lg:sticky lg:top-32">
-            <SectionHeading index="09" label="FAQ" title={['Perguntas', 'frequentes.']} />
+            <SectionHeading index="07" label="FAQ" title={['Perguntas', 'frequentes.']} />
             <Reveal delay={0.1} className="mt-10">
               <p className="mb-6 max-w-[34ch] text-[15px] leading-relaxed text-muted">
                 Não encontrou o que procurava? A equipe responde pelo WhatsApp.

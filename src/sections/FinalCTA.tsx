@@ -8,7 +8,7 @@ import { whatsappUrl } from '../lib/whatsapp';
 
 export default function FinalCTA() {
   const ref = useRef<HTMLElement>(null);
-  const y = useParallax(ref, 60);
+  const y = useParallax(ref, 24);
 
   return (
     <section
@@ -21,9 +21,9 @@ export default function FinalCTA() {
         style={{ y }}
         className="pointer-events-none absolute -right-[18%] top-1/2 aspect-square w-[min(120vw,980px)] -translate-y-1/2"
       >
-        <div className="absolute inset-0 animate-breathe rounded-full border border-champagne/25" />
-        <div className="absolute inset-[14%] animate-breathe rounded-full border border-champagne/20 [animation-delay:-4s]" />
-        <div className="absolute inset-[28%] animate-breathe rounded-full border border-champagne/15 [animation-delay:-8s]" />
+        <div className="absolute inset-0 rounded-full border border-champagne/25" />
+        <div className="absolute inset-[14%] rounded-full border border-champagne/20" />
+        <div className="absolute inset-[28%] rounded-full border border-champagne/15" />
         <div
           className="absolute inset-[34%] rounded-full"
           style={{ background: 'radial-gradient(circle, rgba(205,186,150,0.22) 0%, rgba(205,186,150,0) 68%)' }}
@@ -37,7 +37,7 @@ export default function FinalCTA() {
 
         <RevealLines
           lines={['Seu próximo capítulo', 'começa com você.']}
-          className="font-serif leading-[1] tracking-[-0.02em] [font-size:clamp(2.9rem,7.6vw,7.25rem)]"
+          className="font-serif leading-[1] tracking-[-0.02em] [font-size:clamp(2.35rem,7.6vw,7.25rem)]"
         />
 
         <Reveal delay={0.1} className="mt-10">
@@ -47,12 +47,13 @@ export default function FinalCTA() {
         </Reveal>
 
         <Reveal delay={0.2} className="mt-12">
-          <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+          <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:gap-4">
             <Button
               href={whatsappUrl()}
               variant="light"
               size="lg"
               magnetic
+              className="w-full sm:w-auto"
               icon={<ArrowUpRight className="size-4" strokeWidth={1.5} aria-hidden="true" />}
             >
               Agendar avaliação
@@ -61,6 +62,7 @@ export default function FinalCTA() {
               href={whatsappUrl('Olá! Gostaria de conversar com a equipe da Aura Estética pelo WhatsApp.')}
               variant="outlineLight"
               size="lg"
+              className="w-full sm:w-auto"
               icon={<MessageCircle className="size-4" strokeWidth={1.5} aria-hidden="true" />}
             >
               Falar pelo WhatsApp

@@ -7,7 +7,7 @@ import { slots } from '../data/media';
 
 const pillars = [
   { title: 'Avaliação personalizada', text: 'Cada plano começa por ouvir você.' },
-  { title: 'Tecnologia', text: 'Equipamentos atuais, indicados com critério.' },
+  { title: 'Tecnologia', text: 'Indicada com critério, nunca por padrão.' },
   { title: 'Protocolos individualizados', text: 'Nada de pacote igual para todas.' },
 ];
 
@@ -25,9 +25,9 @@ export default function Philosophy() {
 
           <Reveal delay={0.1} className="mt-10">
             <p className="max-w-[46ch] text-[17px] leading-[1.75] text-muted">
-              A Aura reúne avaliação individual, tecnologia atual e protocolos pensados em torno de
-              quem você é. O objetivo não é mudar o seu rosto ou o seu corpo, e sim cuidar bem do que
-              já é seu, com calma e com critério.
+              A Aura reúne avaliação individual, tecnologia e protocolos pensados em torno de quem você
+              é. O objetivo não é mudar o seu rosto ou o seu corpo, e sim cuidar bem do que já é seu,
+              com calma e com critério.
             </p>
           </Reveal>
 
@@ -58,9 +58,9 @@ export default function Philosophy() {
 
         <div className="relative lg:col-span-6 lg:col-start-7">
           <ImageReveal>
-            <Media {...slots.philosophyMain} tone="b" parallax={28} className="aspect-[4/5] w-full" />
+            <Media {...slots.philosophyMain} tone="b" parallax={14} className="aspect-[4/5] w-full" />
           </ImageReveal>
-          <div className="absolute -bottom-12 -left-3 hidden w-[36%] md:block lg:-left-16">
+          <div className="absolute -bottom-10 -left-2 w-[34%] md:-bottom-12 md:-left-3 md:w-[36%] lg:-left-16">
             <ImageReveal delay={0.25}>
               <Media
                 {...slots.philosophyDetail}
@@ -71,8 +71,8 @@ export default function Philosophy() {
               />
             </ImageReveal>
           </div>
-          <p className="mt-4 text-right font-serif text-[14px] italic text-muted">
-            Luz natural, silêncio e tempo.
+          <p className="mt-4 pb-6 text-right font-serif text-[14px] italic text-muted md:pb-0">
+            Cada atendimento começa por uma avaliação individual.
           </p>
         </div>
       </div>

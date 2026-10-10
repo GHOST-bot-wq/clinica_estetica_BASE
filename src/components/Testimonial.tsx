@@ -1,5 +1,5 @@
 import { Star } from 'lucide-react';
-import type { Testimonial as TestimonialData } from '../data/testimonials';
+import type { Review as TestimonialData } from '../data/reviews';
 
 export default function Testimonial({ item }: { item: TestimonialData }) {
   return (

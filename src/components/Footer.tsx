@@ -1,31 +1,25 @@
 import { Clock, Instagram, MapPin, MessageCircle } from 'lucide-react';
 import Logo from './Logo';
-import { WHATSAPP_DISPLAY, whatsappUrl } from '../lib/whatsapp';
-
-const links = [
-  { label: 'Clínica', href: '#sobre' },
-  { label: 'Tratamentos', href: '#tratamentos' },
-  { label: 'Experiência', href: '#experiencia' },
-  { label: 'Resultados', href: '#resultados' },
-  { label: 'FAQ', href: '#faq' },
-];
+import { contact } from '../data/contact';
+import { navigation } from '../data/navigation';
+import { whatsappUrl } from '../lib/whatsapp';
 
 export default function Footer() {
   return (
     <footer className="on-dark relative overflow-hidden bg-[#181512] text-ivory">
-      <div className="container-x relative z-10 pb-10 pt-20 lg:pt-28">
+      <div className="container-x relative z-10 pb-24 pt-20 sm:pb-10 lg:pt-28">
         <div className="grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <Logo tone="dark" />
             <p className="mt-8 max-w-[34ch] text-[15px] leading-relaxed text-ivory/70">
-              Estética avançada, com avaliação personalizada, tecnologia e atendimento próximo.
+              Estética avançada, com avaliação individual, tecnologia e atendimento próximo.
             </p>
           </div>
 
           <nav aria-label="Rodapé" className="lg:col-span-2 lg:col-start-6">
             <p className="mb-6 text-[11px] uppercase tracking-[0.24em] text-ivory/55">Navegue</p>
             <ul className="space-y-3 text-[15px]">
-              {links.map((l) => (
+              {navigation.map((l) => (
                 <li key={l.href}>
                   <a href={l.href} className="link-grow">
                     {l.label}
@@ -41,34 +35,39 @@ export default function Footer() {
               <li className="flex gap-3">
                 <MessageCircle className="mt-1 size-4 shrink-0" strokeWidth={1.5} aria-hidden="true" />
                 <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="link-grow">
-                  WhatsApp {WHATSAPP_DISPLAY}
+                  Conversar pelo WhatsApp{contact.phoneDisplay ? ` · ${contact.phoneDisplay}` : ''}
                 </a>
               </li>
-              <li className="flex gap-3">
-                <Instagram className="mt-1 size-4 shrink-0" strokeWidth={1.5} aria-hidden="true" />
-                <a
-                  href="https://www.instagram.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-grow"
-                >
-                  @auraestetica
-                </a>
-              </li>
+              {contact.instagramUrl && (
+                <li className="flex gap-3">
+                  <Instagram className="mt-1 size-4 shrink-0" strokeWidth={1.5} aria-hidden="true" />
+                  <a href={contact.instagramUrl} target="_blank" rel="noopener noreferrer" className="link-grow">
+                    {contact.instagramHandle ?? 'Instagram'}
+                  </a>
+                </li>
+              )}
               <li className="flex gap-3">
                 <MapPin className="mt-1 size-4 shrink-0" strokeWidth={1.5} aria-hidden="true" />
                 <span>
-                  Av. T-10, 1000 — Setor Bueno
-                  <br />
-                  Goiânia, GO
+                  {contact.address && (
+                    <>
+                      {contact.address}
+                      <br />
+                    </>
+                  )}
+                  {contact.city}
                 </span>
               </li>
               <li className="flex gap-3">
                 <Clock className="mt-1 size-4 shrink-0" strokeWidth={1.5} aria-hidden="true" />
                 <span>
-                  Segunda a sexta, 9h às 19h
-                  <br />
-                  Sábado, 9h às 14h
+                  {contact.hours && contact.hours.length > 0
+                    ? contact.hours.map((h) => (
+                        <span key={h} className="block">
+                          {h}
+                        </span>
+                      ))
+                    : 'Atendimento com hora marcada'}
                 </span>
               </li>
             </ul>
@@ -76,16 +75,20 @@ export default function Footer() {
         </div>
 
         <div className="mt-20 grid gap-6 border-t border-ivory/[0.12] pt-8 text-[12px] leading-relaxed text-ivory/55 lg:grid-cols-12">
-          <p className="lg:col-span-7">
-            Aura Estética é uma marca fictícia, criada como projeto-conceito para demonstração. Nomes,
-            números, depoimentos, endereço e contatos são ilustrativos. Os procedimentos dependem de
-            avaliação profissional individualizada, e os efeitos variam de pessoa para pessoa. Nenhum
-            conteúdo deste site constitui promessa de resultado.
+          <p className="lg:col-span-8">
+            Os procedimentos dependem de avaliação profissional individualizada, e os efeitos variam de
+            pessoa para pessoa. Nenhum conteúdo deste site constitui promessa de resultado. As
+            fotografias são de bancos de imagens (Pexels) e têm caráter ilustrativo; não retratam
+            pacientes ou profissionais da clínica.
           </p>
-          <p className="lg:col-span-4 lg:col-start-9 lg:text-right">
+          <p className="lg:col-span-4 lg:text-right">
             © 2026 Aura Estética. Todos os direitos reservados.
-            <br />
-            Responsável técnico: a preencher.
+            {contact.technicalResponsible && (
+              <>
+                <br />
+                Responsável técnico: {contact.technicalResponsible}
+              </>
+            )}
           </p>
         </div>
       </div>

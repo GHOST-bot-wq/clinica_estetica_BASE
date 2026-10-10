@@ -33,7 +33,7 @@ export const faq: FaqEntry[] = [
     id: 'local',
     question: 'Onde a clínica está localizada?',
     answer:
-      'Em Goiânia, no Setor Bueno. Endereço de demonstração: Av. T-10, 1000 — Setor Bueno, Goiânia – GO. Ao confirmar o agendamento, enviamos a localização e as orientações de acesso.',
+      'Em Goiânia, GO. O endereço completo e as orientações de acesso são enviados na confirmação do agendamento.',
   },
   {
     id: 'agendar',

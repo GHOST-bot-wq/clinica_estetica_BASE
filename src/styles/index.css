@@ -9,6 +9,12 @@
     -webkit-text-size-adjust: 100%;
   }
 
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
   body {
     @apply bg-ivory font-sans text-ink antialiased;
     overflow-x: clip;

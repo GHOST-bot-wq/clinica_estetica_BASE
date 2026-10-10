@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useParallax } from '../hooks/useParallax';
 import { cn } from '../lib/cn';
@@ -48,6 +48,8 @@ export default function Media({
   priority = false,
 }: MediaProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const [failed, setFailed] = useState(false);
+  const showPhoto = Boolean(src) && !failed;
   const y = useParallax(ref, parallax);
   const layerClass = parallax > 0 ? 'absolute inset-x-0 -inset-y-[8%]' : 'absolute inset-0';
 
@@ -57,7 +59,7 @@ export default function Media({
       className={cn('relative overflow-hidden bg-nude/40', shape === 'arch' && 'rounded-t-[999px]', className)}
     >
       <motion.div className={layerClass} style={parallax > 0 ? { y } : undefined}>
-        {src ? (
+        {showPhoto ? (
           <img
             src={src}
             srcSet={srcSet}
@@ -65,7 +67,8 @@ export default function Media({
             alt={alt}
             loading={priority ? 'eager' : 'lazy'}
             decoding="async"
-            className="h-full w-full object-cover"
+            onError={() => setFailed(true)}
+            className="h-full w-full object-cover [filter:saturate(0.92)_contrast(1.02)]"
           />
         ) : (
           <div role="img" aria-label={alt} className="relative h-full w-full" style={{ background: tones[tone] }}>
@@ -85,7 +88,10 @@ export default function Media({
           </div>
         )}
       </motion.div>
-      {!src && caption !== '' && (
+      {showPhoto && (
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[#D8BFA6]/10 mix-blend-multiply" />
+      )}
+      {!showPhoto && caption !== '' && (
         <span className="pointer-events-none absolute bottom-3 left-4 right-4 font-serif text-[13px] italic text-ink/55">
           {caption ?? 'Espaço para fotografia editorial'}
         </span>

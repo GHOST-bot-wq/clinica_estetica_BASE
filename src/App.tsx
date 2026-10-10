@@ -1,5 +1,4 @@
 import { MotionConfig } from 'framer-motion';
-import Cursor from './components/Cursor';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import ScrollProgress from './components/ScrollProgress';
@@ -11,10 +10,7 @@ import FAQ from './sections/FAQ';
 import FinalCTA from './sections/FinalCTA';
 import Hero from './sections/Hero';
 import Philosophy from './sections/Philosophy';
-import Results from './sections/Results';
-import Signature from './sections/Signature';
-import SocialProof from './sections/SocialProof';
-import Testimonials from './sections/Testimonials';
+import Trust from './sections/Trust';
 import Treatments from './sections/Treatments';
 
 export default function App() {
@@ -27,19 +23,15 @@ export default function App() {
         Pular para o conteúdo
       </a>
       <ScrollProgress />
-      <Cursor />
       <Header />
       <main id="conteudo">
         <Hero />
-        <SocialProof />
         <Philosophy />
         <Treatments />
-        <Signature />
         <Experience />
-        <Results />
-        <Testimonials />
-        <About />
         <Differentials />
+        <About />
+        <Trust />
         <FAQ />
         <FinalCTA />
       </main>

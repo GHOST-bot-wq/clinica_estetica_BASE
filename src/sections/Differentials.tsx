@@ -5,10 +5,10 @@ import SectionHeading from '../components/SectionHeading';
 import { cn } from '../lib/cn';
 
 const items = [
-  { word: 'Tecnologia', text: 'Equipamentos atuais, operados por quem conhece cada um deles.' },
-  { word: 'Personalização', text: 'Nenhum protocolo é copiado. Cada plano nasce da sua avaliação.' },
-  { word: 'Naturalidade', text: 'O objetivo é valorizar o que já é seu, sem exageros.' },
-  { word: 'Acompanhamento', text: 'Retornos e ajustes para que o plano acompanhe você.' },
+  { word: 'Tecnologia', text: 'Recursos escolhidos com critério e indicados somente após avaliação.' },
+  { word: 'Personalização', text: 'Cada plano nasce da sua avaliação, e não de um pacote pronto.' },
+  { word: 'Naturalidade', text: 'Valorizar o que já é seu, sem exageros e sem pressa.' },
+  { word: 'Acompanhamento', text: 'Retornos e ajustes para que o plano acompanhe você ao longo do tempo.' },
 ];
 
 function Row({ word, text, first }: { word: string; text: string; first: boolean }) {
@@ -43,11 +43,11 @@ function Row({ word, text, first }: { word: string; text: string; first: boolean
 
 export default function Differentials() {
   return (
-    <section className="section bg-bone">
+    <section id="diferenciais" className="section bg-bone">
       <div className="container-x">
         <SectionHeading
           className="mb-20 lg:mb-28"
-          index="08"
+          index="04"
           label="Diferenciais"
           title={['O que sustenta', 'cada protocolo.']}
         />

@@ -1,3 +1,5 @@
+import { photo, type ImageSource } from '../lib/images';
+
 export type MediaTone = 'a' | 'b' | 'c' | 'd' | 'e' | 'f';
 export type CategoryName = 'Facial' | 'Corporal' | 'Bem-estar';
 
@@ -12,8 +14,7 @@ export interface Treatment {
   title: string;
   description: string;
   tone: MediaTone;
-  /** Caminho da imagem em /public/images (opcional). */
-  image?: string;
+  image?: ImageSource;
 }
 
 export const categories: Category[] = [
@@ -25,122 +26,110 @@ export const categories: Category[] = [
 export const treatments: Treatment[] = [
   {
     id: 'limpeza-de-pele',
+    image: photo('pexels:18209809'),
     category: 'Facial',
     title: 'Limpeza de pele',
     description:
       'Higienização profunda e cuidadosa, adaptada ao seu tipo de pele e à rotina que você já tem.',
     tone: 'a',
-    // Tratamento facial de skincare profissional — confirmado em clínicas de estética
-    image: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=900&q=80',
   },
   {
     id: 'bioestimuladores',
+    image: photo('pexels:4586713'),
     category: 'Facial',
     title: 'Bioestimuladores',
     description:
       'Protocolos indicados somente após avaliação, pensados para sustentar a qualidade da pele de forma gradual.',
     tone: 'c',
-    // Retrato natural, pele limpa e radiante — skincare
-    image: 'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=900&q=80',
   },
   {
     id: 'skinbooster',
+    image: photo('pexels:34734905'),
     category: 'Facial',
     title: 'Skinbooster',
     description:
       'Hidratação profunda com foco em viço e uniformidade, definida em consulta individual.',
     tone: 'e',
-    // Clínica estética, ambiente de atendimento — confirmado HTTP 200
-    image: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=900&q=80',
   },
   {
     id: 'acne',
+    image: photo('pexels:30809949'),
     category: 'Facial',
     title: 'Tratamentos para acne',
     description:
       'Plano contínuo que une cuidados em cabine e orientações para casa, respeitando o ritmo da sua pele.',
     tone: 'b',
-    // Pele limpa, cuidado com a face — dermatologia e estética
-    image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=900&q=80',
   },
   {
     id: 'rejuvenescimento',
+    image: photo('pexels:29648624'),
     category: 'Facial',
     title: 'Rejuvenescimento',
     description:
       'Combinações de tecnologias e ativos escolhidas para valorizar seus traços com naturalidade.',
     tone: 'd',
-    // Rotina de skincare / estética — ambientação de cuidado com a pele
-    image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80',
   },
   {
     id: 'modelagem',
+    image: photo('pexels:19641818'),
     category: 'Corporal',
     title: 'Modelagem corporal',
     description:
       'Tecnologias e manobras reunidas em um protocolo desenhado para o seu objetivo e para o seu corpo.',
     tone: 'f',
-    // Nail spa — tratamento corporal, atmosfera de spa e beleza
-    image: 'https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?auto=format&fit=crop&w=900&q=80',
   },
   {
     id: 'celulite',
+    image: photo('pexels:5069506'),
     category: 'Corporal',
     title: 'Protocolos para celulite',
     description:
       'Sessões planejadas para cuidar da aparência e da textura da pele, com acompanhamento de perto.',
     tone: 'c',
-    // Massagem corporal / tratamento spa
-    image: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=900&q=80',
   },
   {
     id: 'drenagem',
+    image: photo('pexels:9146381'),
     category: 'Corporal',
     title: 'Drenagem',
     description:
       'Técnicas manuais e tecnológicas para uma sensação de leveza e bem-estar no dia a dia.',
     tone: 'a',
-    // Massagem de relaxamento / drenagem linfática — confirmado em sites de spa
-    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=80',
   },
   {
     id: 'tecnologias-corporais',
+    image: photo('pexels:10822254'),
     category: 'Corporal',
     title: 'Tecnologias corporais',
     description:
       'Equipamentos atuais, operados por profissionais habilitados e indicados apenas após a avaliação.',
     tone: 'e',
-    // Tecnologia estética / equipamento clínico de saúde e beleza
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80',
   },
   {
     id: 'massagens',
+    image: photo('pexels:4599396'),
     category: 'Bem-estar',
     title: 'Massagens',
     description:
       'Tempo para desacelerar, com técnicas escolhidas conforme a sua necessidade do dia.',
     tone: 'b',
-    // Massagem terapêutica nas costas — confirmado em sites de massagem e spa
-    image: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=900&q=80',
   },
   {
     id: 'relaxantes',
+    image: photo('pexels:6628649'),
     category: 'Bem-estar',
     title: 'Protocolos relaxantes',
     description:
       'Sequências que unem toque, aroma e silêncio para uma pausa de verdade na rotina.',
     tone: 'd',
-    // Sala de spa/massagem com mesa de atendimento, luz e atmosfera serena
-    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80',
   },
   {
     id: 'experiencias',
+    image: photo('pexels:19666194'),
     category: 'Bem-estar',
     title: 'Experiências personalizadas',
     description:
       'Combinações exclusivas, montadas junto com você para ocasiões e momentos especiais.',
     tone: 'f',
-    // Produto de spa / experiência premium de bem-estar
-    image: 'https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&w=900&q=80',
   },
 ];

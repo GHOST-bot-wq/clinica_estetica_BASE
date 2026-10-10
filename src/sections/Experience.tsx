@@ -7,23 +7,23 @@ import { cn } from '../lib/cn';
 const steps = [
   {
     number: '01',
-    title: 'Avaliação',
-    text: 'Uma conversa sem pressa sobre a sua rotina, os seus objetivos e as suas expectativas.',
+    title: 'Primeiro contato',
+    text: 'Você fala com a equipe pelo WhatsApp, tira dúvidas e escolhe o melhor horário para a sua avaliação.',
   },
   {
     number: '02',
-    title: 'Diagnóstico',
-    text: 'Análise feita por profissional habilitado, para entender o que faz sentido no seu caso.',
+    title: 'Avaliação individual',
+    text: 'Uma conversa sem pressa sobre a sua rotina e os seus objetivos, com análise feita pela profissional.',
   },
   {
     number: '03',
-    title: 'Protocolo personalizado',
-    text: 'Um plano com etapas, tecnologias e intervalos definidos junto com você, no seu ritmo.',
+    title: 'Plano de atendimento',
+    text: 'Quando houver indicação, você recebe um plano com etapas e intervalos definidos junto com você.',
   },
   {
     number: '04',
     title: 'Acompanhamento',
-    text: 'Retornos programados, ajustes quando necessários e um canal aberto para tirar dúvidas.',
+    text: 'Retornos combinados, ajustes quando necessários e um canal aberto para tirar dúvidas.',
   },
 ];
 
@@ -71,14 +71,15 @@ export default function Experience() {
         <div className="lg:col-span-5">
           <div className="lg:sticky lg:top-32">
             <SectionHeading
-              index="04"
+              index="03"
               label="Experiência"
               title={['A experiência começa', 'antes da primeira', 'sessão.']}
             />
             <Reveal delay={0.1} className="mt-10">
               <p className="max-w-[40ch] text-[16px] leading-[1.75] text-muted">
                 Quatro etapas, do primeiro contato ao acompanhamento. Você sabe o que vai acontecer em
-                cada uma antes de decidir seguir para a próxima.
+                cada uma antes de decidir seguir para a próxima. Não há promessa de resultado: há
+                avaliação, explicação e escolha.
               </p>
             </Reveal>
           </div>

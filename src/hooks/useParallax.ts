@@ -11,6 +11,7 @@ export function useParallax(ref: RefObject<HTMLElement>, distance = 40): MotionV
     target: ref,
     offset: ['start end', 'end start'],
   });
-  const d = reduce ? 0 : distance;
+  const small = typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches;
+  const d = reduce ? 0 : small ? distance * 0.5 : distance;
   return useTransform(scrollYProgress, [0, 1], [-d, d]);
 }

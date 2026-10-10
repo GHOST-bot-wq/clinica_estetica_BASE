@@ -6,7 +6,7 @@ import Logo from './Logo';
 import { navigation } from '../data/navigation';
 import { ease } from '../lib/animation';
 import { cn } from '../lib/cn';
-import { WHATSAPP_DISPLAY, whatsappUrl } from '../lib/whatsapp';
+import { whatsappUrl } from '../lib/whatsapp';
 
 export default function Header() {
   const { scrollY } = useScroll();
@@ -46,6 +46,7 @@ export default function Header() {
               : 'border-transparent bg-transparent py-6',
         )}
       >
+        <div aria-hidden="true" style={{ height: 'env(safe-area-inset-top, 0px)' }} />
         <div className="container-x flex items-center justify-between">
           <Logo />
 
@@ -67,6 +68,20 @@ export default function Header() {
             >
               Agendar avaliação
             </Button>
+
+            <a
+              href={whatsappUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                'inline-flex min-h-[40px] items-center rounded-full border border-ink/25 px-4 text-[12px] font-medium tracking-[0.04em] transition-opacity duration-500 lg:hidden',
+                open || !scrolled ? 'pointer-events-none opacity-0' : 'opacity-100',
+              )}
+              aria-hidden={open || !scrolled}
+              tabIndex={open || !scrolled ? -1 : 0}
+            >
+              Agendar
+            </a>
 
             <button
               type="button"
@@ -102,7 +117,7 @@ export default function Header() {
             role="dialog"
             aria-modal="true"
             aria-label="Menu de navegação"
-            className="fixed inset-0 z-40 flex flex-col bg-ivory px-6 pb-10 pt-28 lg:hidden"
+            className="fixed inset-0 z-40 flex flex-col overflow-y-auto bg-ivory px-6 pb-[calc(2rem+env(safe-area-inset-bottom,0px))] pt-[calc(6.5rem+env(safe-area-inset-top,0px))] lg:hidden"
             initial={{ clipPath: 'inset(0 0 100% 0)' }}
             animate={{ clipPath: 'inset(0 0 0% 0)' }}
             exit={{ clipPath: 'inset(0 0 100% 0)' }}
@@ -115,7 +130,7 @@ export default function Header() {
                     <motion.a
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className="flex items-baseline gap-4 py-4 font-serif text-[2.5rem] leading-none"
+                      className="flex items-baseline gap-4 py-3 font-serif leading-none [font-size:clamp(1.9rem,8.5vw,2.5rem)] min-[420px]:py-4"
                       initial={{ y: '100%' }}
                       animate={{ y: '0%' }}
                       exit={{ y: '100%' }}
@@ -132,7 +147,7 @@ export default function Header() {
             </nav>
 
             <motion.div
-              className="mt-auto space-y-6"
+              className="mt-auto space-y-5 pt-8"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
@@ -148,7 +163,7 @@ export default function Header() {
                 Agendar avaliação
               </Button>
               <p className="text-[13px] text-muted">
-                WhatsApp {WHATSAPP_DISPLAY} · Goiânia, GO
+                Atendimento em Goiânia, GO · com hora marcada
               </p>
             </motion.div>
           </motion.div>

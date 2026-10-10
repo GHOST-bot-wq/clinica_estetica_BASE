@@ -1,9 +1,16 @@
 /**
- * Número fictício de demonstração.
- * Troque por um número real no formato internacional, sem símbolos (55 + DDD + número).
+ * Número de WhatsApp.
+ * Configure em um arquivo .env (veja .env.example):  VITE_WHATSAPP_NUMBER=5562999999999
+ * Formato: código do país (55) + DDD + número, somente dígitos.
+ * Enquanto não houver número real, o site usa um número de demonstração (os links funcionam,
+ * mas não levam a uma conversa real).
  */
-export const WHATSAPP_NUMBER = '5562900000000';
-export const WHATSAPP_DISPLAY = '(62) 90000-0000';
+const DEMO_NUMBER = '5562900000000';
+
+const fromEnv = ((import.meta.env.VITE_WHATSAPP_NUMBER as string | undefined) ?? '').replace(/\D/g, '');
+
+export const WHATSAPP_CONFIGURED = fromEnv.length >= 12 && fromEnv.startsWith('55');
+export const WHATSAPP_NUMBER = WHATSAPP_CONFIGURED ? fromEnv : DEMO_NUMBER;
 
 export const DEFAULT_MESSAGE =
   'Olá! Conheci a Aura Estética pelo site e gostaria de agendar uma avaliação.';
