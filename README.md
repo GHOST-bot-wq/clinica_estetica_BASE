@@ -61,3 +61,14 @@ Se uma imagem falhar ao carregar, o site exibe um bloco tonal neutro em vez de u
 - Tipografia: Instrument Serif (títulos) + Hanken Grotesk (interface).
 - Movimento sóbrio: entradas discretas, parallax mínimo, nada em loop. `prefers-reduced-motion` é respeitado.
 - Mobile: menu fullscreen, botão "Agendar" no cabeçalho após rolar, cards em coluna única, alvos de toque ≥ 44 px, áreas seguras do iPhone.
+
+## Se o site parecer não ter mudado
+
+1. Use **esta pasta inteira** (não misture arquivos de versões antigas).
+2. Apague a pasta `node_modules/.vite` (cache), rode `npm install` e `npm run dev`.
+3. No navegador, atualize forçando: `Ctrl+F5` (Windows) ou `Cmd+Shift+R` (Mac).
+4. Confira a versão: em "Exibir código-fonte", procure por `aura-build`. Deve aparecer `v5-2026-10`.
+
+## Aprovação das fotos
+
+Abra `tools/revisao-fotos.html`, escolha a foto de cada espaço, clique em "Gerar resumo" e envie o texto para quem for aplicar as trocas.
